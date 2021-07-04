@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar"
 
 const CommonLayout = ({children}) => {
     return (
-        <div>
+        <div className="font-nunito">
             <Navbar />
             {children}
             <Footer />            

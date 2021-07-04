@@ -6,12 +6,14 @@ const NotFound = () => {
     <>
       <Head>
         <title>TradeVeer | Page Not Found</title>
+        <meta httpEquiv="refresh" content="5; url=http://localhost:3000" />
       </Head>
       <div className="h-auto w-screen bg-gray-100 ">
         <div className="flex flex-col justify-center items-center ">
           <h1 className="font-bold text-6xl">Oooooooops</h1>
           <br />
           <h3 className="font-semibold text-4xl">Page Not Found</h3>
+          <h3 className="font-semibold text-4xl">Wait!!! You will be redirect to HOME page</h3>
           <br />
           <Link href="/">
             <Image

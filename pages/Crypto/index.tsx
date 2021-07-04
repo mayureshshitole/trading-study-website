@@ -8,7 +8,7 @@ const defaultCryptoURL =
 const globalCryptoData = "https://api.coingecko.com/api/v3/global";
 const trendingCoins = "https://api.coingecko.com/api/v3/search/trending";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(defaultCryptoURL);
   const globalRes = await fetch(globalCryptoData);
   const trendingRes = await fetch(trendingCoins);
@@ -43,7 +43,7 @@ const CryptoHome = ({ data, globalData, trendingData }) => {
     } catch (error) {
       console.error(error);
     }
-  }, []);
+  }, [data, globalData, trendingData]);
 
   console.log(trendingData.coins[0].item.name);
 
@@ -51,28 +51,28 @@ const CryptoHome = ({ data, globalData, trendingData }) => {
     <>
       <Head>
         <title>TradeVeer | Crypto Market</title>
+        <meta name="refresh" content="5" />
+        <meta name="description" content="Global Cryptocurrency data." />
       </Head>
-      <div className=" bg-black text-white py-2">
-        <marquee behavior="" direction="">
+      <div className="font-nunito  bg-black text-black py-2 flex flex-row items-center">
+        <div>
           <p className="flex space-x-3">
-            <p className="bg-gray-500 flex rounded-3xl px-2 ">
-              {globalCryptoData.active_cryptocurrencies}
-            </p>
-            <p className="bg-gray-500 flex rounded-3xl px-2 ">
-              {globalCryptoData.active_cryptocurrencies}
-            </p>
-            <p className="bg-gray-500 flex rounded-3xl px-2 ">
-              {globalCryptoData.active_cryptocurrencies}
+            <p className="bg-gray-200 flex rounded-3xl px-2 space-x-2">
+              <h3>Total Coins:</h3>
+
+              <h3 className="font-semibold">
+                {globalCryptoData.active_cryptocurrencies}
+              </h3>
             </p>
           </p>
-        </marquee>
+        </div>
       </div>
-      <div className="p-5">
+      <div className="font-nunito p-5">
         <p className="text-xl md:text-3xl font-bold">
           Cryptocurrency Prices by Market Cap
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center">
+      <div className="font-nunito flex flex-col justify-center items-center">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 w-3/4 ">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div className="shadow overflow-hidden sm:rounded-lg border-2 border-blue-100">
@@ -167,6 +167,10 @@ const CryptoHome = ({ data, globalData, trendingData }) => {
           </div>
         </div>
       </div>
+   
+   <div>
+
+   </div>
     </>
   );
 };

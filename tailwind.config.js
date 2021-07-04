@@ -3,7 +3,11 @@ module.exports = {
   mode: "jit",
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ["nunito", "sans-serif"],
+      },
+    },
   },
   variants: {
     extend: {},

@@ -66,7 +66,7 @@ const Navbar = () => {
 
           <Link href="/Authorisation">
             <button
-              className="bg-indigo-600 px-5 py-1 rounded-3xl text-white font-semibold ml-8"
+              className="bg-blue-500 hover:bg-blue-600 hover:outline-none hover:ring-4 hover:ring-indigo-400 hover:ring-opacity-50 px-5 py-1 rounded-3xl text-white font-semibold ml-8 transform group-hover:scale-125 transition duration-700 ease-in-out"
               type="submit"
             >
               <a onClick={toggleNav}> SIGN IN</a>
