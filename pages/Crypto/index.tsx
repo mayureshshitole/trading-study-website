@@ -45,8 +45,6 @@ const CryptoHome = ({ data, globalData, trendingData }) => {
     }
   }, [data, globalData, trendingData]);
 
-  console.log(trendingData.coins[0].item.name);
-
   return (
     <>
       <Head>
@@ -61,7 +59,7 @@ const CryptoHome = ({ data, globalData, trendingData }) => {
               <h3>Total Coins:</h3>
 
               <h3 className="font-semibold">
-                {globalCryptoData.active_cryptocurrencies}
+               Hello Crypto Traders
               </h3>
             </p>
           </p>
